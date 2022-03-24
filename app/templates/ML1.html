@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>VGG16</title>
+</head>
+<body>
+   <h2>Здесь будет распознано изображение</h2>
+<form method="POST" >{% csrf_token %}
+        <div >
+            <input id="radio-1" type="radio" name="radio" value="cat" checked>
+            <label for="radio-1">Изображение 1</label>
+        </div>
+
+        <div class="form_radio_btn">
+            <input id="radio-2" type="radio" name="radio" value="cat1"  checked>
+            <label for="radio-2">Изображение 2</label>
+        </div>
+          <div class="form_radio_btn">
+            <input id="radio-3" type="radio" name="radio" value="plane"  checked>
+            <label for="radio-3">Изображение 3</label>
+        </div>
+            <div class="form_radio_btn">
+            <input id="radio-4" type="radio" name="radio" value="plane1"  checked>
+            <label for="radio-4">Изображение 4</label>
+        </div>
+          <div class="form_radio_btn">
+            <input id="radio-5" type="radio" name="radio" value="ship"  checked>
+            <label for="radio-5">Изображение 5</label>
+        </div>
+        <input type="submit" value="Распознать">
+</form>
+   <p>
+       <img src="../../static/images/{{IM_name}}.jpg" id="ris" width  = "300" height = "200">
+   </p>
+   <h3>
+   <p>Распознана:{{por}}</p>
+   <p> вероятность = {{ver}}</p>
+   </h3>
+</body>
+</html>
